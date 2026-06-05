@@ -19,7 +19,7 @@ void main()
 {
 
     int math,eng,hindi;
-    float ans;
+    // float ans;
     float percentage;
 
     printf("Enter math marks :");
@@ -34,8 +34,10 @@ void main()
     percentage=(math+eng+hindi)/3;
     // printf("Your percentage is %f",percentage);
 
+    float ans;
     if(percentage > 90)
     {
+        
         ans = science(percentage);
         printf("Pooja your admision confirm in science stream with per = %f",ans);
     }
