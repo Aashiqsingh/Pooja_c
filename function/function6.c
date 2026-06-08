@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdbool.h>
 int isEven(int num)
 {
     if(num%2==0)
@@ -14,6 +15,7 @@ int isEven(int num)
 void main()
 {
     int num,ans;
+    bool isActive = true;
     printf("Enter a number :");
     scanf("%d",&num);
 
