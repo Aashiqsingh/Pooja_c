@@ -34,25 +34,15 @@ void display()
     }
 }
 
-void particularDisplay(int id){
-    int temp=0;
-    for(int i=0;i<SIZE;i++)
-    {
-        if(c[i].cid == id && c[i].flag == 1)
+void particularDisplay(int index){
+   
+     if(c[index].flag == 1)
         {
-            printf("CUSTOMER ID : %d",c[i].cid);
-            printf("\nCUSTOMER NAME : %s",c[i].cname);
-            printf("\nCUSTOMER BRANCH : %s",c[i].branch);
-            temp = 0;
-            break;
+            printf("CUSTOMER ID : %d",c[index].cid);
+            printf("\nCUSTOMER NAME : %s",c[index].cname);
+            printf("\nCUSTOMER BRANCH : %s",c[index].branch);
         }
-        else{
-            temp=1;
-        }
-    }
-    if(temp == 1){
-        printf("\nCUSTOMER NOT FOUND !!");
-    }
+      
 }
 
 void delete(int id)
@@ -63,6 +53,18 @@ void delete(int id)
             c[i].flag=0;
         }
     }
+}
+
+int search(int id){
+    for(int i=0;i<SIZE;i++)
+    {
+        if(c[i].cid == id && c[i].flag == 1){
+            particularDisplay(i);
+            return i;
+        }
+    }
+    printf("\nCustomer not found");
+    return -1;
 }
 
 int main(){
@@ -90,13 +92,22 @@ int main(){
             case 3: 
                 printf("Enter your ID :");
                 scanf("%d",&id);
-                particularDisplay(id);
+                int i = search(id);
+                if(i != -1){
+                    particularDisplay(i);
+                }
                 break;
             case 4: 
                 printf("Enter your Id :");
                 scanf("%d",&id);
                 delete(id);
                 break;
+            case 5:
+                break;
+            case 6:
+                printf("Enter your ID :");
+                scanf("%d",&id);
+                search(id);
             case 7: s=1;
                 break;
         }
