@@ -1,23 +1,31 @@
 #include<stdio.h>
 #include<string.h>
+#define pf printf
 
 void main()
 {
-    char str[50];
-    int i=0,length=0,count=0;
 
-    printf("Enter string :");
-    gets(str);
+    pf("Hii my name is aashiq");
+    #undef pf
+
+    // printf("Hii my name is harshita");
 
 
-    // Find Vowels in strings
-    for(i=0;str[i]!='\0';i++)
-    {
-        if(str[i]=='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u'){
-            count++;
-        }
-    }
-    printf("Number of vowels in string is %d",count);
+    // char str[50];
+    // int i=0,length=0,count=0;
+
+    // printf("Enter string :");
+    // gets(str);
+
+
+    // // Find Vowels in strings
+    // for(i=0;str[i]!='\0';i++)
+    // {
+    //     if(str[i]=='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u'){
+    //         count++;
+    //     }
+    // }
+    // printf("Number of vowels in string is %d",count);
 
 
 
